@@ -1,0 +1,97 @@
+<div class="container-fluid ">
+    <div class="row justify-content-center">
+
+<div class="card w-50  ">
+    <div class="card-body ">
+        <div class="container ">
+            <div class="row ">
+
+                <form [formGroup]="regstrform">
+                    <h5 class="card-title">Registration Form </h5>
+                    <hr>
+                    <div class="Form-Group">
+                        <label class="Form-label">First Name</label>
+                        <input type="text" class="form-control" name="fname" formControlName="fname"
+                            placeholder="enter firstname">
+                    </div>
+                    <div class="Form-Group">
+                        <label class="Form-label">Last Name</label>
+                        <input type="text" class="form-control" formControlName="lname" placeholder="enter lastname">
+                    </div>
+                    <div class="Form-Group">
+                        <label class="Form-label">Email</label>
+                        <input type="email" #emailid (blur)="getemail(emailid.value)" class="form-control" name="email" formControlName="email" placeholder="enter email">
+                        <small class="text-danger" *ngIf="!regstrform.get('email')?.valid && regstrform.get('email')?.touched">plz enter your valid email</small>
+
+                    </div>
+                    <div class="Form-Group">
+                        <label class="Form-label">Phno</label>
+                        <input type="number" class="form-control" name="phno" formControlName="phno"
+                            placeholder="enter your phno">
+                            <small class="text-danger" *ngIf="!regstrform.get('phno')?.valid && regstrform.get('phno')?.touched">enter valid 10 digit contact no</small>
+                    </div>
+                    <div class="Form-Group">
+                        <label class="Form-label">D.O.B</label>
+                        <input type="date" class="form-control" name="dob" formControlName="dob"
+                            placeholder="enter dob">
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input form-control" type="radio"  name="gender" id="male">
+                        <label class="form-check-label" for="male">
+                          Male
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input form-control" type="radio"  name="gender" id="female" >
+                        <label class="form-check-label" for="female">
+                          Female
+                        </label>
+                      </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label text-dark">country :</label> <br>
+                        <select class="form-control" name="countryId" formControlName="countryId"
+                            (change)="getstate($any($event.target).value)">
+                            <option *ngFor="let c of countryOption|keyvalue" [value]="c.key">{{c.value}}</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label text-dark">state :</label> <br>
+                        <select class="form-control" name="stateId" formControlName="stateId"
+                            (change)="getcity($any($event.target).value)">
+                            <option *ngFor="let s of stateOption|keyvalue" [value]="s.key">{{s.value}}</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label text-dark">city :</label> <br>
+                        <select class="form-control" name="cityId" formControlName="cityId">
+                            <option *ngFor="let t of cityOption|keyvalue" [value]="t.key">{{t.value}}</option>
+                        </select>
+
+                    </div>
+
+<div class="bt" style="text-align: center;">
+                    <button class="btn btn-danger m-3">Reset</button>
+                    <button class="btn btn-info m-3" (click)="regpost()">Register</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+     <!-- <select class="form-control" name="gender" formControlName="gender" >
+                            <option >select gender</option>
+                            <option >Male</option>
+                            <option >Female</option>
+                            <option >Others</option>
+                        </select> -->

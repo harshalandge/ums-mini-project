@@ -1,0 +1,40 @@
+
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="card w-50">
+            <div class="card-body">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col">
+                            <form [formGroup]="signinform">
+
+                                <h5 class="card-title text-light ">SignIn here</h5>
+                                <hr>
+                                <div class="Form-Group">
+                                    <label class="Form-label text-light">Email</label>
+                                    <input type="email" name="email" class="form-control" formControlName="email"
+                                        placeholder="enter email">
+                                        <small class="text-danger" *ngIf="!signinform.get('email')?.valid && signinform.get('email')?.touched">enter your valid email</small>
+                                </div>
+                                <div class="Form-Group">
+                                    <label class="Form-label text-light">Password</label>
+                                    <input type="password" name="pwd" class="form-control" formControlName="pwd"
+                                        placeholder="enter password">
+                                        <small class="text-danger" *ngIf="!signinform.get('pwd')?.valid && signinform.get('pwd')?.touched">enter your valid password</small>
+                                </div>
+                               <div class="div" style="text-align: center;"> <button type="submit" class="btn btn-light  mt-3"
+                                    (click)="post()">Sign-in</button></div>
+                                <!-- <a class="btn btn-danger" (click)="post()" [routerLink]="['signin']">Sign-in </a> <br> -->
+                                <div class="har d-flex justify-content-between">
+                                    <a class="card-link mt-5 text-light"  [routerLink]="['/forget']">Forget-password-?</a>
+                                    <a class="card-link mt-5 text-light" [routerLink]="['/register']">sign-up</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
