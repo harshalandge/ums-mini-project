@@ -2,7 +2,7 @@
     <div class="row justify-content-center">
         <div class="col-xs-6 col-md-6 col-xl-3">
             <form [formGroup]="unlockform">
-                <h1>unlock account</h1>
+                <h1 class="text-center">Unlock account</h1>
                 <div class="Form-Group">
                     <label class="Form-label">Email</label>
                     <input type="email" class="form-control" name="email" formControlName="email"
@@ -33,7 +33,7 @@
                         *ngIf="!unlockform.get('confirmPwd')?.valid && unlockform.get('confirmPwd')?.touched">enter your
                         valid password</small>
                 </div>
-                <button class="btn btn-info mt-3 " (click)="unlkpost()" [disabled]="!unlockform.valid">submit</button>
+                <button class="btn btn-dark mt-3 " (click)="unlkpost()" [disabled]="!unlockform.valid">submit</button>
             </form>
         </div>
     </div>
