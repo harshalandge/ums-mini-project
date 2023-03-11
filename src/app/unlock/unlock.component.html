@@ -1,45 +1,40 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
+        <div class="col-xs-6 col-md-6 col-xl-3">
+            <form [formGroup]="unlockform">
+                <h1>unlock account</h1>
+                <div class="Form-Group">
+                    <label class="Form-label">Email</label>
+                    <input type="email" class="form-control" name="email" formControlName="email"
+                        placeholder="enter email">
+                    <small class="text-danger"
+                        *ngIf="!unlockform.get('email')?.valid && unlockform.get('email')?.touched">enter your valid
+                        email</small>
+                </div>
+                <div class="Form-Group">
+                    <label class="Form-label">temprary pwd</label>
+                    <input type="password" class="form-control" name="tempPwd" formControlName="tempPwd"
+                        placeholder="enter temprary pwd">
 
-        <div class="card w-50">
-            
-                
-                    
-                        <div class="Col-md-6 col-xs-6 col-xl-3">
-
-
-                            <form [formGroup]="unlockform">
-                                <h1>unlock account</h1>
-                                <div class="Form-Group">
-                                    <label class="Form-label">Email</label>
-                                    <input type="email" class="form-control" name="email" formControlName="email"
-                                        placeholder="enter email">
-                                        <small class="text-danger" *ngIf="!unlockform.get('email')?.valid && unlockform.get('email')?.touched">enter your valid email</small>
-                                </div>
-                                <div class="Form-Group">
-                                    <label class="Form-label">temprary pwd</label>
-                                    <input type="password" class="form-control" name="tempPwd" formControlName="tempPwd"
-                                        placeholder="enter temprary pwd">
-                                       
-                                </div>
-                                <div class="Form-Group">
-                                    <label class="Form-label">choose new pwd</label>
-                                    <input type="password" class="form-control" name="newPwd" formControlName="newPwd"
-                                        placeholder="enter new pwd">
-                                        <small class="text-danger" *ngIf="!unlockform.get('newPwd')?.valid && unlockform.get('newPwd')?.touched">enter your valid password</small>
-                                </div>
-                                <div class="Form-Group">
-                                    <label class="Form-label">confirm new pwd</label>
-                                    <input type="password" class="form-control" name="confirmPwd"
-                                        formControlName="confirmPwd" placeholder="enter new pwd">
-                                        <small class="text-danger" *ngIf="!unlockform.get('confirmPwd')?.valid && unlockform.get('confirmPwd')?.touched">enter your valid password</small>
-                                </div>
-                                <button class="btn btn-info mt-3 " (click)="unlkpost()" [disabled]="!unlockform.valid">submit</button>
-                            </form>
-                        </div>
-                    
-                
-           
+                </div>
+                <div class="Form-Group">
+                    <label class="Form-label">choose new pwd</label>
+                    <input type="password" class="form-control" name="newPwd" formControlName="newPwd"
+                        placeholder="enter new pwd">
+                    <small class="text-danger"
+                        *ngIf="!unlockform.get('newPwd')?.valid && unlockform.get('newPwd')?.touched">enter your valid
+                        password</small>
+                </div>
+                <div class="Form-Group">
+                    <label class="Form-label">confirm new pwd</label>
+                    <input type="password" class="form-control" name="confirmPwd" formControlName="confirmPwd"
+                        placeholder="enter new pwd">
+                    <small class="text-danger"
+                        *ngIf="!unlockform.get('confirmPwd')?.valid && unlockform.get('confirmPwd')?.touched">enter your
+                        valid password</small>
+                </div>
+                <button class="btn btn-info mt-3 " (click)="unlkpost()" [disabled]="!unlockform.valid">submit</button>
+            </form>
         </div>
     </div>
 </div>

@@ -2,13 +2,13 @@ input.ng-invalid.ng-touched{
     border:1px solid red;
     box-shadow: 0 0 13px rgb(79, 10, 10);
 }
-.container{
+/* .container{
     background: linear-gradient(to left,black,rgb(219, 219, 216),rgb(145, 15, 15))
-}
+} */
 .container-fluid{
     background: linear-gradient(to left,black,rgb(219, 219, 216)),red;
 }
-.card{
+/* .card{
     border:1px solid red;
     box-shadow: 5px 10px  13px 5px  rgb(79, 10, 10);  
-}
+} */

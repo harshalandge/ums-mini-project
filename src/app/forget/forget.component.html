@@ -1,31 +1,20 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
+        <div class="col-xs-6 col-md-6 col-xl-3">
+            <form [formGroup]="pass">
+                <h5 class="card-title text-primary align-center">Forget password</h5>
+                <hr>
+                <div class="Form-Group">
+                    <label class="Form-label">Email</label>
+                    <input type="email" class="form-control" name="emailId" formControlName="emailId"
+                        placeholder="enter email">
+                    <small class="text-danger" *ngIf="!pass.get('emailId')?.valid && pass.get('emailId')?.touched">enter
+                        valid email id</small>
 
-        <div class="card w-50">
-            
-                
-                    
-                        <div class="Col-md-6 col-xs-6 col-xl-3">
+                </div>
 
-
-                            <form [formGroup]="pass">
-                                <h5 class="card-title text-primary align-center">Forget password</h5>
-                                <hr>
-                                <div class="Form-Group">
-                                    <label class="Form-label">Email</label>
-                                    <input type="email" class="form-control" name="emailId" formControlName="emailId"
-                                        placeholder="enter email">
-                                        <small class="text-danger" *ngIf="!pass.get('emailId')?.valid && pass.get('emailId')?.touched">enter valid email id</small>
-                                       
-                                </div>
-
-                                <button type="button" class="btn btn-dark mt-4 align-center"
-                                    (click)="getPassword()">submit</button>
-                            </form>
-                        </div>
-                   
-                
-           
+                <button type="button" class="btn btn-dark mt-4 align-center" (click)="getPassword()">submit</button>
+            </form>
         </div>
     </div>
 </div>

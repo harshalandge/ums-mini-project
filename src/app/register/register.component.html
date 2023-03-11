@@ -1,11 +1,6 @@
-<div class="container-fluid ">
+<div class="container-fluid">
     <div class="row justify-content-center">
-
-<div class="card w-50  ">
-    
-       
-           
-                <div class="Col-md-6 col-xs-6 col-xl-3">
+        <div class="col-xs-6 col-md-6 col-xl-3">
                 <form [formGroup]="regstrform">
                     <h5 class="card-title">Registration Form </h5>
                     <hr>
@@ -20,15 +15,20 @@
                     </div>
                     <div class="Form-Group">
                         <label class="Form-label">Email</label>
-                        <input type="email" #emailid (blur)="getemail(emailid.value)" class="form-control" name="email" formControlName="email" placeholder="enter email">
-                        <small class="text-danger" *ngIf="!regstrform.get('email')?.valid && regstrform.get('email')?.touched">plz enter your valid email</small>
+                        <input type="email" #emailid (blur)="getemail(emailid.value)" class="form-control" name="email"
+                            formControlName="email" placeholder="enter email">
+                        <small class="text-danger"
+                            *ngIf="!regstrform.get('email')?.valid && regstrform.get('email')?.touched">plz enter your
+                            valid email</small>
 
                     </div>
                     <div class="Form-Group">
                         <label class="Form-label">Phno</label>
                         <input type="number" class="form-control" name="phno" formControlName="phno"
                             placeholder="enter your phno">
-                            <small class="text-danger" *ngIf="!regstrform.get('phno')?.valid && regstrform.get('phno')?.touched">enter valid 10 digit contact no</small>
+                        <small class="text-danger"
+                            *ngIf="!regstrform.get('phno')?.valid && regstrform.get('phno')?.touched">enter valid 10
+                            digit contact no</small>
                     </div>
                     <div class="Form-Group">
                         <label class="Form-label">D.O.B</label>
@@ -36,18 +36,18 @@
                             placeholder="enter dob">
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input form-control" type="radio"  name="gender" id="male">
+                        <input class="form-check-input form-control" type="radio" name="gender" id="male">
                         <label class="form-check-label" for="male">
-                          Male
+                            Male
                         </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input form-control" type="radio"  name="gender" id="female" >
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input form-control" type="radio" name="gender" id="female">
                         <label class="form-check-label" for="female">
-                          Female
+                            Female
                         </label>
-                      </div>
-                    
+                    </div>
+
                     <div class="form-group">
                         <label class="form-label text-dark">country :</label> <br>
                         <select class="form-control" name="countryId" formControlName="countryId"
@@ -72,24 +72,24 @@
 
                     </div>
 
-<div class="bt" style="text-align: center;">
-                    <button class="btn btn-danger m-3">Reset</button>
-                    <button class="btn btn-info m-3" (click)="regpost()">Register</button>
-                </div>
+                    <div class="bt" style="text-align: center;">
+                        <button class="btn btn-danger m-3">Reset</button>
+                        <button class="btn btn-info m-3" (click)="regpost()">Register</button>
+                    </div>
                 </form>
             </div>
-        
-    
 
+
+
+        </div>
     </div>
-</div>
 
 
 
 
 
 
-     <!-- <select class="form-control" name="gender" formControlName="gender" >
+    <!-- <select class="form-control" name="gender" formControlName="gender" >
                             <option >select gender</option>
                             <option >Male</option>
                             <option >Female</option>
